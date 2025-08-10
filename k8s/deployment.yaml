@@ -23,15 +23,15 @@ spec:
               path: /actuator/health/readiness
               port: 8180
             initialDelaySeconds: 5
-            periodSeconds: 10
-            failureThreshold: 5
+            periodSeconds: 5
+            failureThreshold: 3
           livenessProbe:
             httpGet:
-              path: /actuator/health/livenessERROR
+              path: /actuator/health/liveness
               port: 8180
             initialDelaySeconds: 5
-            periodSeconds: 10
-            failureThreshold: 5
+            periodSeconds: 5
+            failureThreshold: 3
           resources:
             requests:
               cpu: "100m"
