@@ -22,16 +22,16 @@ spec:
             httpGet:
               path: /actuator/health/readiness
               port: 8180
-            initialDelaySeconds: 15
-            periodSeconds: 5
-            failureThreshold: 3
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            failureThreshold: 100
           livenessProbe:
             httpGet:
               path: /actuator/health/liveness
               port: 8180
-            initialDelaySeconds: 15
+            initialDelaySeconds: 5
             periodSeconds: 10
-            failureThreshold: 3
+            failureThreshold: 100
           resources:
             requests:
               cpu: "100m"
